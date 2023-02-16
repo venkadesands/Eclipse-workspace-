@@ -1,0 +1,42 @@
+Feature: Hotel Booking in Adactin Application
+@smokeTest
+Scenario Outline: Login Page
+Given User Launch the Application
+When User Enter The "<username>" In UserName Field
+And User Enter The "<password>" In Password Field
+Then User Click the Login Button
+Examples:
+|username|password|
+|AAA|123|
+|BALAJIDS|13TY8X|
+@sanityTest
+Scenario: Search Hotel Page 
+When User Select The Particular Country Location In The Location's Drop Down Box
+And User Select The Particlar Hotel In The Hotel's Drop Down Box
+And User Select The Particular Roomtype In The Roomtype's Drop Down Box
+And User Select The Particular Number Of Rooms In The Number Of Room's  Drop Down Box
+And User Select The Particular Check In Date In The Check In Date's  Drop Down Box
+And User Select The Particular Check Out Date In The Check Out Date's  Drop Down Box
+And User Select The Particular Adults per Room In The Adults per Room's  Drop Down Box
+And User Select The Children per Room In The Children per Room's  Drop Down Box
+Then User Click the Search Button It's Navigate The Select Hotel Page
+@sanityTest
+Scenario: Select Hotel Page 
+When User Select The Hotel With Search Hotel Page Clarification 
+Then User Click the Continue Button It's Navigate The Select Book A Hotel Page
+@stopTest
+Scenario: Book A Hotel Page
+When User Enter The First Name in In The First Name Field
+And User Enter The Last Name in In The Last Name Field
+And User Enter The Billing Address in In Billing Address Field
+And User Enter The Credit Card No in In Credit Card No Field
+And User Enter The Credit Card No in In Credit Card No Field
+And User Select The Particular Credit Card Type  In the Credit Card Type's  Drop Down Box
+And User Select The Particular Credit Card Expiry Date And Month  In the Credit Card Expiry Date And Month's  Drop Down Box
+And User Select The Particular Credit Card Expiry Year In the Credit Card Expiry Year  Drop Down Box
+And User Enter The CVV Number in In TheCVV Number's Field
+Then User Click the Book Now  Button
+@regressionTest
+Scenario: Booking Confirmation Page
+
+Then User Click the LogOut Button

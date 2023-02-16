@@ -1,0 +1,54 @@
+package org.tamil;
+
+import com.loop.If_else_elseif;
+
+public class Try_for_Mathi {
+	 static String mathi ;
+	 static String strings;
+	
+	public static void da() {
+		String s = "27/01/2022" ;
+		String[] split = s.split("/");
+		for (String strings : split) {
+			
+			
+		
+		}
+		
+		
+	}
+	
+	
+
+static String  d ;
+static String m;
+static String y ;
+
+	private void date() {
+		 d = "27";
+
+	}
+	
+private void month() {
+	 m = "01";
+	
+}
+private static void year() {
+ y = "2022";
+if (mathi == "27/01/2022") {
+	
+	System.out.println("the date are equal: Yes  " + string);
+	
+	
+}
+else {
+	System.out.println("given is not match");
+}
+}
+
+public static void main(String[] args) {
+	year();
+	//da();
+}
+
+}

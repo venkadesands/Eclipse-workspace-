@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.single_inheritance&apos; to &apos;Java_projects/src&apos;&#x0D;&#x0A;- Original project: &apos;Single inheritance&apos;&#x0D;&#x0A;- Destination element: &apos;Java_projects/src&apos;&#x0D;&#x0A;- Original element: &apos;Single inheritance/src/com.single_inheritance&apos;" description="Copy package" destination="=Java_projects/src" element1="/src&lt;com.single_inheritance" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1640932003573" version="1.0"/>
+</session>

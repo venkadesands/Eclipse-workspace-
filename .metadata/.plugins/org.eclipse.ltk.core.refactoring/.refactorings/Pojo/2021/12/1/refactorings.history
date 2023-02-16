@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.pojo&apos; to &apos;Java_projects/src&apos;&#x0D;&#x0A;- Original project: &apos;Pojo&apos;&#x0D;&#x0A;- Destination element: &apos;Java_projects/src&apos;&#x0D;&#x0A;- Original element: &apos;Pojo/src/com.pojo&apos;" description="Copy package" destination="=Java_projects/src" element1="/src&lt;com.pojo" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1640930346407" version="1.0"/>
+</session>

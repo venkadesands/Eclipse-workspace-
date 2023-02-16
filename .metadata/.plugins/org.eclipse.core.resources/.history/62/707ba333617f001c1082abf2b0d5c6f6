@@ -1,0 +1,34 @@
+package org.tamil;
+
+import com.loop.If_else_elseif;
+
+public class Try_for_Mathi {
+	
+static String  d ;
+String m;
+String y ;
+
+	private void date() {
+		 d = "27";
+
+	}
+	
+private void month() {
+	 m = "01";
+	
+}
+private static void year() {
+String y = "2022";
+if (d == "27") {
+	
+	System.out.println("the date are equal: Yes  " + d);
+	
+}
+
+}
+
+public static void main(String[] args) {
+	
+}
+
+}

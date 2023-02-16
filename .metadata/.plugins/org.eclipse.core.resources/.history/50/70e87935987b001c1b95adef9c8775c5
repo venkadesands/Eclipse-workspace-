@@ -1,0 +1,173 @@
+package com.addactin.stepdefinition;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.SendKeysAction;
+
+import com.adactin.helper.File_Reader_Manager;
+import com.adactin.pom.PomForAdactinLoginpage;
+import com.adactin.pom.Pom_For_SearchHotel_Page;
+import com.adactin.pom.Pom_For_select_And_Bookhotel;
+import com.adactin.runner.Test_Runner_Cucumber;
+import com.adaction.baseclass.Base_Class;
+import com.sdp.Page_Object_Manager;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class StepDefinition extends Base_Class {
+	
+	public static WebDriver driver = Test_Runner_Cucumber.driver;
+	Page_Object_Manager pm = new Page_Object_Manager(driver);
+//	public static PomForAdactinLoginpage pap = new PomForAdactinLoginpage(driver);
+//	public static Pom_For_select_And_Bookhotel psb= new Pom_For_select_And_Bookhotel(driver);
+//	public static Pom_For_SearchHotel_Page psh = new Pom_For_SearchHotel_Page(driver);
+	
+	@Given("^User Launch the Application$")
+	public void user_Launch_the_Application() throws Throwable {
+		String url = File_Reader_Manager.getinstanceFrm().getinstanceCR().geturl();
+	   getUrl(url);
+	}
+
+	@When("^User Enter The \"([^\"]*)\" In UserName Field$")
+	public void user_Enter_The_In_UserName_Field(String UserName) throws Throwable {
+		this.UserName=UserName;
+		//inputValueElement(pm.getinstancepap().getUsername(), UserName);
+	}
+
+	@When("^User Enter The \"([^\"]*)\" In Password Field$")
+	public void user_Enter_The_In_Password_Field(String PassWord) throws Throwable {
+		inputValueElement(pm.getinstancepap().getPassword(),PassWord);
+	}
+
+
+
+
+	@Then("^User Click the Login Button$")
+	public void user_Click_the_Login_Button() throws Throwable {
+	   clickOnButton(pm.getinstancepap().getLogin());
+	}
+
+//	@Given("^User Lauch The Application$")
+//	public void user_Lauch_The_Application() throws Throwable {
+//	   getUrl("https://adactinhotelapp.com/");
+//	}
+
+	@When("^User Select The Particular Country Location In The Location's Drop Down Box$")
+	public void user_Select_The_Particular_Country_Location_In_The_Location_s_Drop_Down_Box() throws Throwable {
+	 
+	 dropDown("byvisibletext", "Sydney", pm.getinstancepsh().getLocation());
+	}
+	
+
+	@When("^User Select The Particlar Hotel In The Hotel's Drop Down Box$")
+	public void user_Select_The_Particlar_Hotel_In_The_Hotel_s_Drop_Down_Box() throws Throwable {
+	  
+	   dropDown("byvalue","Hotel Creek", pm.getinstancepsh().getHotels());
+	}
+
+	@When("^User Select The Particular Roomtype In The Roomtype's Drop Down Box$")
+	public void user_Select_The_Particular_Roomtype_In_The_Roomtype_s_Drop_Down_Box() throws Throwable {
+	   dropDown("byvisibletext", "Standard", pm.getinstancepsh().getRoomtype());
+	}
+
+	@When("^User Select The Particular Number Of Rooms In The Number Of Room's  Drop Down Box$")
+	public void user_Select_The_Particular_Number_Of_Rooms_In_The_Number_Of_Room_s_Drop_Down_Box() throws Throwable {
+	   dropDown("byvalue","1", pm.getinstancepsh().getNumber_of_Rooms());
+	}
+
+	@When("^User Select The Particular Check In Date In The Check In Date's  Drop Down Box$")
+	public void user_Select_The_Particular_Check_In_Date_In_The_Check_In_Date_s_Drop_Down_Box() throws Throwable {
+	    inputValueElement(pm.getinstancepsh().getCheck_In_Date(), "05/01/2022");
+	}
+
+	@When("^User Select The Particular Check Out Date In The Check Out Date's  Drop Down Box$")
+	public void user_Select_The_Particular_Check_Out_Date_In_The_Check_Out_Date_s_Drop_Down_Box() throws Throwable {
+	 inputValueElement(pm.getinstancepsh().getCheck_out_Date(), "06/01/2022");
+	}
+
+	@When("^User Select The Particular Adults per Room In The Adults per Room's  Drop Down Box$")
+	public void user_Select_The_Particular_Adults_per_Room_In_The_Adults_per_Room_s_Drop_Down_Box() throws Throwable {
+	   dropDown("byvalue", "1",  pm.getinstancepsh().getAdults_per_Room());
+	}
+
+	@When("^User Select The Children per Room In The Children per Room's  Drop Down Box$")
+	public void user_Select_The_Children_per_Room_In_The_Children_per_Room_s_Drop_Down_Box() throws Throwable {
+	    dropDown("byvalue","0", pm.getinstancepsh().getChildren_per_Room());
+	}
+
+	@Then("^User Click the Search Button It's Navigate The Select Hotel Page$")
+	public void user_Click_the_Search_Button_It_s_Navigate_The_Select_Hotel_Page() throws Throwable {
+	   clickOnButton(pm.getinstancepsh().getSearch());
+	}
+
+	@When("^User Select The Hotel With Search Hotel Page Clarification$")
+	public void user_Select_The_Hotel_With_Search_Hotel_Page_Clarification() throws Throwable {
+	    clickOnButton(pm.getinstancepsb().getCheck_box());
+	}
+
+	@Then("^User Click the Continue Button It's Navigate The Select Book A Hotel Page$")
+	public void user_Click_the_Continue_Button_It_s_Navigate_The_Select_Book_A_Hotel_Page() throws Throwable {
+	    clickOnButton(pm.getinstancepsb().getContinue());
+	}
+
+	@When("^User Enter The First Name in In The First Name Field$")
+	public void user_Enter_The_First_Name_in_In_The_First_Name_Field() throws Throwable {
+	   inputValueElement(pm.getinstancepsb().getFirstName2(), "BALAJI");
+	}
+
+	@When("^User Enter The Last Name in In The Last Name Field$")
+	public void user_Enter_The_Last_Name_in_In_The_Last_Name_Field() throws Throwable {
+	    inputValueElement(pm.getinstancepsb().getLastname(), "D S");
+	}
+
+	@When("^User Enter The Billing Address in In Billing Address Field$")
+	public void user_Enter_The_Billing_Address_in_In_Billing_Address_Field() throws Throwable {
+	    inputValueElement(pm.getinstancepsb().getBilling_Address(),"ABCDEFGH");
+	}
+
+	@When("^User Enter The Credit Card No in In Credit Card No Field$")
+	public void user_Enter_The_Credit_Card_No_in_In_Credit_Card_No_Field() throws Throwable {
+	   inputValueElement(pm.getinstancepsb().getCredit_Card_No(), "1234567891234567");
+	}
+
+	@When("^User Select The Particular Credit Card Type  In the Credit Card Type's  Drop Down Box$")
+	public void user_Select_The_Particular_Credit_Card_Type_In_the_Credit_Card_Type_s_Drop_Down_Box() throws Throwable {
+	    dropDown("byvisibletext", "American Express", pm.getinstancepsb().getCredit_card_type());
+	}
+
+	@When("^User Select The Particular Credit Card Expiry Date And Month  In the Credit Card Expiry Date And Month's  Drop Down Box$")
+	public void user_Select_The_Particular_Credit_Card_Expiry_Date_And_Month_In_the_Credit_Card_Expiry_Date_And_Month_s_Drop_Down_Box() throws Throwable {
+	   dropDown("byvisibletext", "January", pm.getinstancepsb().getExpiry_Date_Month());
+	}
+	
+	@When("^User Select The Particular Credit Card Expiry Year In the Credit Card Expiry Year  Drop Down Box$")
+	public void user_Select_The_Particular_Credit_Card_Expiry_Year_In_the_Credit_Card_Expiry_Year_Drop_Down_Box() throws Throwable {
+	   dropDown("byvisibletext", "2022", pm.getinstancepsb().getExpiry_Date_Year());
+	}
+	@When("^User Enter The CVV Number in In TheCVV Number's Field$")
+	public void user_Enter_The_CVV_Number_in_In_TheCVV_Number_s_Field() throws Throwable {
+	   inputValueElement(pm.getinstancepsb().getCVV_Number(), "008");
+	}
+
+	@Then("^User Click the Book Now  Button$")
+	public void user_Click_the_Book_Now_Button() throws Throwable {
+		 clickOnButton(pm.getinstancepsb().getBookNowButton());
+		 Thread.sleep(6000);
+	}
+//
+//	@When("^User Veryfy The Booking Confirmation Page's All Details$")
+//	public void user_Veryfy_The_Booking_Confirmation_Page_s_All_Details() throws Throwable {
+//	  
+//	}
+
+	@Then("^User Click the LogOut Button$")
+	public void user_Click_the_LogOut_Button() throws Throwable {
+	   clickOnButton(pm.getinstancepsb().getLogout());
+	}
+
+
+}

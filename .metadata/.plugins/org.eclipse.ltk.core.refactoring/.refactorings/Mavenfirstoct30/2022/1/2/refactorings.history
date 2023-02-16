@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.Runner.Adactin_runner&apos; to &apos;Adactin_runner_for_register&apos;&#x0D;&#x0A;- Original project: &apos;Mavenfirstoct30&apos;&#x0D;&#x0A;- Original element: &apos;com.Runner.Adactin_runner&apos;&#x0D;&#x0A;- Renamed element: &apos;com.Runner.Adactin_runner_for_register&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Adactin_runner&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/test\/java=/test=/true=/=/optional=/true=/=/maven.pomderived=/true=/&lt;com.Runner{Adactin_runner.java[Adactin_runner" matchStrategy="1" name="Adactin_runner_for_register" qualified="false" references="true" similarDeclarations="false" stamp="1641381660712" textual="false" version="1.0"/>
+</session>
